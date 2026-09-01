@@ -1,0 +1,12 @@
+RENDER DEPLOYMENT
+Root Directory:
+modern-trade-dashboard-web
+
+Build Command:
+pip install -r requirements.txt
+
+Start Command:
+waitress-serve --listen=0.0.0.0:$PORT app.app:app
+
+This version explicitly serves /static/* from app/static so CSS/JS do not
+depend on Flask's automatic static-folder discovery.

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>RENÉE Trade Intelligence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static_files', filename='css/dashboard.css') }}?v=4.8">
+<script src="{{ url_for('static_files', filename='js/echarts.min.js') }}?v=4.8"></script>
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar">
+    <div class="brand"><div class="brand-icon">R</div><div><div class="brand-title">RENÉE</div><div class="brand-sub">Trade Intelligence</div></div></div>
+    <div class="nav-label">WORKSPACE</div>
+    <nav id="nav">
+      <button class="nav-item active" data-page="home"><span>⌂</span> Overview</button>
+      <!-- Order Tracking hidden for now — restore by uncommenting this button -->
+      <!-- <button class="nav-item" data-page="orders"><span>▣</span> Order Tracking</button> -->
+      <button class="nav-item" data-page="stock"><span>◒</span> Stock Gap</button>
+      <button class="nav-item" data-page="cancelled"><span>⊘</span> Cancelled</button>
+      <!-- Fill Rate hidden for now — restore by uncommenting this button -->
+      <!-- <button class="nav-item" data-page="fill"><span>◫</span> Fill Rate</button> -->
+      <button class="nav-item" data-page="explorer"><span>⌁</span> Explorer</button>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="source-dot"><span></span><b>Data source</b></div>
+      <div id="sourceNote">Checking sources…</div>
+      <div class="version">Timelessly inspired, endlessly enhanced.</div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div><div class="eyebrow">RENÉE · TRADE INTELLIGENCE</div><h1 id="pageTitle">Executive Overview</h1></div>
+      <div class="top-actions"><span id="status" class="live"><i></i> Live</span><button id="refresh" class="icon-btn">↻ <span>Refresh</span></button></div>
+    </header>
+    <div id="content"></div>
+  </main>
+</div>
+<div id="toast-root"></div>
+<div id="modal-root"></div>
+<script src="{{ url_for('static_files', filename='js/app.js') }}?v=4.8"></script>
+</body>
+</html>
